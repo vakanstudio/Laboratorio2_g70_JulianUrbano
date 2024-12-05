@@ -30,6 +30,20 @@
         }
     </script>
 
+    <script>
+        function consultarTarea() {
+            const usr = document.getElementById("Usuario").value ;
+            const tar = localStorage.getItem("Tarea"+usr) ;
+            const des = localStorage.getItem("Descripcion"+usr) ;
+            const prog = localStorage.getItem("Progreso"+usr) ;
+            
+            document.getElementById("Tarea").value = tar ;
+            document.getElementById("Descripcion").value = des ;
+            document.getElementById("Progreso").value = prog ;
+        }
+            
+    </script>
+
 </head>
 <body>
     <h1>Formulario de registro</h1>
