@@ -59,6 +59,7 @@
     <script><!-- Aquí empieza el código JavaScript para eliminar los datos del Formulario -->
         function eliminarTarea() {
             const usr = document.getElementById("Usuario").value ;
+            localStorage.removeItem(usr) ;
             localStorage.removeItem("Tarea"+usr) ;
             localStorage.removeItem("Descripcion"+usr) ;
             localStorage.removeItem("Progreso"+usr) ;
@@ -86,11 +87,12 @@
         <br>
         <br>
         <input type="submit" value="Enviar">
+        <input type="reset" value="Limpiar">
         <br>
         <br>
         <input type="button" onclick="actualizarTarea()" value="Actualizar">
         <input type="button" onclick="consultarTarea()" value="Consultar">
-        <input type="reset" onclick="eliminarTarea()" value="Eliminar">
+        <input type="button" onclick="eliminarTarea()" value="Eliminar">
 
     </form>
 
