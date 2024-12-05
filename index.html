@@ -17,7 +17,7 @@
         }
     </style>
 
-    <script>
+    <script><!-- Aquí empieza el código JavaScript para guardar los datos del Formulario -->
         function guardarDatosLS() {
             const usr = document.getElementById("Usuario").value ;
             const tar = document.getElementById("Tarea").value ;
@@ -30,7 +30,7 @@
         }
     </script>
 
-    <script>
+    <script><!-- Aquí empieza el código JavaScript para consultar los datos del Formulario -->
         function consultarTarea() {
             const usr = document.getElementById("Usuario").value ;
             const tar = localStorage.getItem("Tarea"+usr) ;
@@ -42,6 +42,27 @@
             document.getElementById("Progreso").value = prog ;
         }
             
+    </script>
+    
+    <script><!-- Aquí empieza el código JavaScript para actualizar los datos del Formulario -->
+        function actualizarTarea() {
+            const usr = document.getElementById("Usuario").value ;
+            const tar = document.getElementById("Tarea").value ;
+            const des = document.getElementById("Descripcion").value ;
+            const prog = document.getElementById("Progreso").value ;
+            localStorage.setItem("Tarea"+usr,tar) ;
+            localStorage.setItem("Descripcion"+usr,des) ;
+            localStorage.setItem("Progreso"+usr,prog) ;
+        }
+    </script>
+    
+    <script><!-- Aquí empieza el código JavaScript para eliminar los datos del Formulario -->
+        function eliminarTarea() {
+            const usr = document.getElementById("Usuario").value ;
+            localStorage.removeItem("Tarea"+usr) ;
+            localStorage.removeItem("Descripcion"+usr) ;
+            localStorage.removeItem("Progreso"+usr) ;
+        }
     </script>
 
 </head>
