@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Julian Urbano">
+    <meta name="keywords" content="li, td, ul, ol, img...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 2 G-70</title>
+    <style>
+        .resaltar {
+            background-color: aqua;
+            color: red;
+            font-weight: bold;
+        }
+        .cuerpotabla {
+            background-color: chartreuse;
+        }
+    </style>
+
+    <script>
+        function guardarDatosLS() {
+            const usr = document.getElementById("Usuario").value ;
+            const tar = document.getElementById("Tarea").value ;
+            const des = document.getElementById("Descripcion").value ;
+            const prog = document.getElementById("Progreso").value ;
+            localStorage.setItem(usr,usr) ;
+            localStorage.setItem("Tarea"+usr,tar) ;
+            localStorage.setItem("Descripcion"+usr,des) ;
+            localStorage.setItem("Progreso"+usr,prog) ;
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Formulario de registro</h1>
+    <form onsubmit="guardarDatosLS(); return false;">
+        <label for="Usuario">Usuario:</label>
+        <input type="text" id="Usuario" name="Usuario" required>
+        <br>
+        <br>
+        <label for="Tarea">Ingresar tarea:</label>
+        <input type="text" id="Tarea" name="tarea" required>
+        <br>
+        <br>
+        <label for="Descripcion">Descripcion:</label>
+        <input type="text" id="Descripcion" name="Descripcion" required>
+        <br>
+        <br>
+        <label for="Progreso">Progreso de la tarea:</label>
+        <input type="text" id="Progreso" name="Progreso" required>
+        <br>
+        <br>
+        <input type="submit" value="Enviar">
+        <br>
+        <br>
+        <input type="button" onclick="actualizarTarea()" value="Actualizar">
+        <input type="button" onclick="consultarTarea()" value="Consultar">
+        <input type="reset" onclick="eliminarTarea()" value="Eliminar">
+
+    </form>
+
+    
+</body>
+</html>
